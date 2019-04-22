@@ -1,0 +1,211 @@
+<!--
+  Generated template for the KycformPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="header">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+         
+      </button>
+      <ion-title >Kyc Form</ion-title>
+ 
+       
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+  <ion-card>
+
+    <ion-card-header>
+      Company Details
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating>Company Name<b style="color:red">*</b>:</ion-label>
+          <ion-input type="text" [(ngModel)]="registerForm.companyname" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Client Name<b style="color:red">*</b>:</ion-label>
+          <ion-input type="text" [(ngModel)]="registerForm.clientname" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Address<b style="color:red">*</b></ion-label>
+          <ion-textarea [(ngModel)]="registerForm.address" ></ion-textarea>
+        </ion-item>
+
+     </ion-list>   
+    </ion-card-content>
+  
+  </ion-card>
+
+  <ion-card>
+
+      <ion-card-header>
+          Proprietor/Partners
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list>
+  
+          <ion-item>
+            <ion-label floating>Name1:</ion-label>
+            <ion-input type="text" [(ngModel)]="registerForm.name1" ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Name2:</ion-label>
+            <ion-input type="text" [(ngModel)]="registerForm.name2" ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+              <ion-label floating>Mobile1:</ion-label>
+              <ion-input type="tel" [(ngModel)]="registerForm.mobile" ></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Mobile2:</ion-label>
+                <ion-input type="tel" [(ngModel)]="registerForm.mobile2" ></ion-input>
+              </ion-item>
+  
+       </ion-list>   
+      </ion-card-content>
+    
+    </ion-card>
+
+
+  <ion-card>
+
+      <ion-card-header>
+          Phone No
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list>
+  
+          <ion-item>
+            <ion-label floating>Office1:</ion-label>
+            <ion-input type="text" [(ngModel)]="registerForm.office1" ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Office2:</ion-label>
+            <ion-input type="text" [(ngModel)]="registerForm.office2" ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+              <ion-label floating>Email:</ion-label>
+              <ion-input type="email" [(ngModel)]="registerForm.email" ></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Residence:</ion-label>
+                <ion-input type="text" [(ngModel)]="registerForm.residence" ></ion-input>
+              </ion-item>
+  
+       </ion-list>   
+      </ion-card-content>
+    
+    </ion-card>
+
+    <ion-card>
+
+        <ion-card-header>
+            Bank Details
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-list>
+    
+            <ion-item>
+              <ion-label floating>Name:</ion-label>
+              <ion-input type="text" [(ngModel)]="registerForm.bname" ></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label floating>Branch:</ion-label>
+              <ion-input type="text" [(ngModel)]="registerForm.Branch" ></ion-input>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label floating>Account Number:</ion-label>
+                <ion-input type="text" [(ngModel)]="registerForm.acno" ></ion-input>
+              </ion-item>
+  
+              <ion-item>
+                  <ion-label floating>IFSC Code:</ion-label>
+                  <ion-input type="text" [(ngModel)]="registerForm.ifsc" ></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating> TIN No:</ion-label>
+                    <ion-input type="text" [(ngModel)]="registerForm.tinno" ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label floating>PAN No:</ion-label>
+                      <ion-input type="text" [(ngModel)]="registerForm.panno" ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>Reference:</ion-label>
+                        <ion-input type="text" [(ngModel)]="registerForm.Reference" ></ion-input>
+                      </ion-item>  
+                      <ion-item>
+                        <ion-label floating>Gst No:</ion-label>
+                        <ion-input type="text" [(ngModel)]="registerForm.gst_no" ></ion-input>
+                      </ion-item>
+         </ion-list>   
+        </ion-card-content>
+      
+      </ion-card>
+
+           <ion-card>
+              <ion-card-header>
+                  Address Proof
+                </ion-card-header>
+            <ion-item no-lines (click)="openImages('AddressProof')">
+                <button   id="btn" ion-button icon-only clear><ion-icon color=light name="ios-camera"></ion-icon></button>
+                <img *ngIf="imageURIShop" [src]="imageURIShop" height="150" width="150"/>
+            </ion-item>  
+          </ion-card>
+          <ion-card>
+              <ion-card-header>
+                  PAN No Scan Copy
+                </ion-card-header>
+              <ion-item no-lines (click)="openImages('PANNoScanCopy')">
+                  <button   id="btn" ion-button icon-only clear><ion-icon color=light name="ios-camera"></ion-icon></button>
+                  <img *ngIf="imageURIShop2" [src]="imageURIShop2" height="150" width="150"/>
+              </ion-item>  
+            </ion-card>
+
+            <ion-card>
+                <ion-card-header>
+                    TIN No Scan Copy
+                  </ion-card-header>
+                <ion-item no-lines (click)="openImages('TINNoScanCopy')">
+                    <button   id="btn" ion-button icon-only clear><ion-icon color=light name="ios-camera"></ion-icon></button>
+                    <img *ngIf="imageURIShop3" [src]="imageURIShop3" height="150" width="150"/>
+                </ion-item>  
+              </ion-card>
+
+              <ion-card>
+                  <ion-card-header>
+                      Partnership
+                    </ion-card-header>
+                  <ion-item no-lines (click)="openImages('Partnership')">
+                      <button   id="btn" ion-button icon-only clear><ion-icon color=light name="ios-camera"></ion-icon></button>
+                      <img *ngIf="imageURIShop4" [src]="imageURIShop4" height="150" width="150"/>
+                  </ion-item>  
+              </ion-card> 
+              <div text-center>
+                <button ion-button color="dark" round (click)="submit()">Submit</button>
+              </div>
+             
+</ion-content>

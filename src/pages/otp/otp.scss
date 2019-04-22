@@ -1,0 +1,78 @@
+page-otp {
+  .imgrow{
+    text-align: center;
+    background-color: #333;
+}
+
+.logo{
+   
+    width: 70%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+    ion-header {
+        .toolbar {
+          position: absolute;
+          .toolbar-background {
+            background: transparent;
+          }
+          .toolbar-title {
+            color: black;
+          }
+        }
+      }
+      ion-content{
+  
+        background-image: url('./../assets/imgs/image.jpg');
+        background-repeat: no-repeat;  
+        background-position: 0% 0% ;
+        background-size: 100% 100% ;
+    }
+    
+    .text-input-md{
+      text-align: center !important;
+   }
+
+   .text-input-ios{
+     text-align: center !important;
+  }
+
+
+   .button-md{
+       text-transform: none;
+     -webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.14);
+     box-shadow:0 0 0 0 rgba(0, 0, 0, 0.14);;
+   }
+   .button-ios{
+     text-transform: none;
+   -webkit-box-shadow:0 0 0 0 rgba(0, 0, 0, 0.14);
+   box-shadow:0 0 0 0 rgba(0, 0, 0, 0.14);;
+ }
+   .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+       height: 0px;
+   }
+   .header-ios::after, .tabs-ios[tabsPlacement="top"] > .tabbar::after, .footer-ios::before, .tabs-ios[tabsPlacement="bottom"] > .tabbar::before{
+     height: 0px;
+ }
+   .button-full-md{
+       height: 50px;
+   }
+   .button-full-ios{
+     height: 50px;
+ }
+ h1{
+   color:white
+ }
+ h5{
+   color:white;
+ }
+ p{
+   color:white;
+ }
+ .text-input-md{
+   color:white;
+ }
+ .text-input-ios{
+   color:white;
+ }
+}

@@ -1,0 +1,110 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content >
+
+  <div >
+  
+
+   <form class="form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">     
+    <div class="imgrow">
+
+      <img class="logo animated rubberBand" src="http://anjanigold.dot2door.in/includes/images/logo.png" />
+    </div>
+    <div padding>
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.name">
+                <div class="error-message" *ngIf="validations_form.get('name').hasError(validation.type) && (validations_form.get('name').touched)">
+                    {{ validation.message }}
+                </div>
+            </ng-container>
+        </div>
+      <ion-item>
+        <ion-input placeholder="Name*" formControlName="name"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.firmName">
+              <div class="error-message" *ngIf="validations_form.get('firmName').hasError(validation.type) && (validations_form.get('firmName').touched)">
+                  {{ validation.message }}
+              </div>
+          </ng-container>
+      </div>
+      <ion-item>
+        <ion-input placeholder="Firm Name*" formControlName="firmName"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.mobile">
+              <div class="error-message" *ngIf="validations_form.get('mobile').hasError(validation.type) && (validations_form.get('mobile').touched)">
+                  {{ validation.message }}
+              </div>
+          </ng-container>
+      </div>
+      <ion-item>
+        <ion-input placeholder="Contact No*" type="tel" formControlName="mobile"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').touched)">
+                  {{ validation.message }}
+              </div>
+          </ng-container>
+      </div>
+      <ion-item>
+        <ion-input placeholder="Email Id" formControlName="email" clearInput></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.state">
+              <div class="error-message" *ngIf="validations_form.get('state').hasError(validation.type) && (validations_form.get('state').touched)">
+                  {{ validation.message }}
+              </div>
+          </ng-container>
+      </div>
+     
+
+      <ion-item no-lines>
+            <ion-label>State*</ion-label>
+            <select-searchable
+                item-content
+                formControlName="state"
+                [(ngModel)]="ports.name" 
+                [items]="ports"
+                itemValueField="id"
+                itemTextField="name"
+                [canSearch]="true"
+               >
+            </select-searchable>
+        </ion-item>
+
+        <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.city">
+                    <div class="error-message" *ngIf="validations_form.get('city').hasError(validation.type) && (validations_form.get('city').touched)">
+                        {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+      <ion-item *ngIf="ports.name">
+       
+        <ion-input [(ngModel)]="city" formControlName="city" placeholder="City*" ></ion-input>
+      </ion-item>
+    </div>
+     <p text-center style="color:white" (click)="loginagain()">Already a member?<u>Login here</u>  </p>
+
+    <div class="regButton">
+      <button class="button_example" [disabled]="(!validations_form.valid)" >Register</button>
+    </div>
+
+
+    </form>
+  </div>
+
+
+
+
+</ion-content>

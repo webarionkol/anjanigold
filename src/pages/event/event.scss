@@ -1,0 +1,30 @@
+page-event {
+    ion-avatar{
+        font-size: 16px !important;
+      }
+      .nofound{
+        text-align: center;
+        margin-top:80px;
+      }
+
+      .nofound img{
+        width: 80%
+      }
+      h1{
+        color: rgb(180, 16, 16)
+      }
+      .item-ios {
+        padding-left: 0px;
+      }
+      .item-ios ion-avatar[item-left], .item-ios ion-thumbnail[item-left], .item-ios ion-avatar[item-start], .item-ios ion-thumbnail[item-start]{
+        margin-right: 0px;
+      }
+      .item-md {
+        border:1px dotted gainsboro;
+        padding-left: 0px;
+      }
+      .item-md ion-avatar[item-left], .item-md ion-thumbnail[item-left], .item-md ion-avatar[item-start], .item-md ion-thumbnail[item-start]{
+        margin-right: 0px;
+      }
+      
+}

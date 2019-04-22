@@ -1,0 +1,30 @@
+page-alert {
+    #col12{
+  
+    color:white;
+     border: 1px solid #32383e;
+   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(253,34,30,1) 36%, rgba(252,176,69,1) 100%); 
+
+}
+// #col1n{
+//     color:white;
+//     border: 1px solid #32383e;
+//     background: gray;
+// }
+
+ 
+
+
+ 
+    #col1n{
+        ion-col:nth-child(even){
+            background: rgb(61, 59, 58);
+            color:white;
+        }
+        ion-col:nth-child(odd) {
+            background: rgb(248, 247, 247);
+            border:1px dotted gray;
+        }
+    }
+
+}

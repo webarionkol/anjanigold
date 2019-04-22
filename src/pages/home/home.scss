@@ -1,0 +1,80 @@
+page-home {
+  .banner{
+   text-align: center;
+  
+    // background: rgb(56, 49, 49);
+    img{
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }.marquee {
+    margin:2px;
+   p{
+       margin-bottom: 0px;
+   }
+   width: 100%;
+ 
+   color:#3a1111;
+   font: 16px 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+    [col-12]{
+        padding:10px;
+        color:white;
+         border: 1px solid #32383e ;
+       background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(253,34,30,1) 36%, rgba(252,176,69,1) 100%); 
+      }
+    .row{
+      background: #ececec;
+       border:0.5px solid rgb(184, 180, 180);
+      color:#1b1a1a;
+  }
+  #rowt{
+    background: #5b5b5c83;
+    padding:1%;
+    color:#000000;
+    margin-bottom: 3%;
+  }
+  .head{
+    background: linear-gradient(to right, #ffff00 0%, #cc6600 100%);
+  }
+
+  .red{
+    color: rgb(240, 22, 22);
+  }
+ 
+  .green{
+    color: rgb(8, 187, 8);
+  }
+
+  .red-bkg{
+    color:white;
+    background:radial-gradient(circle, rgba(131,58,180,1) 0%, rgb(232, 19, 19) 0%, rgba(232, 19, 19, 1) 100%, rgba(252,176,69,1) 100%);
+  }
+
+  .green-bkg{
+    color:white;
+    background:radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(79,210,21,1) 0%, rgba(46,136,6,1) 100%, rgba(252,176,69,1) 100%);
+  }
+  .tab{
+    width: 20%;
+    padding: 10px;
+    float: left;
+    background-color: #ffb53d;
+  }
+  .table{
+    width: 80%;
+    padding: 10px;
+    float: right;
+  }
+  .yup{
+    width: 100%;
+  }
+ span{
+   font-size: 12px;
+ }
+ #tablep{
+   margin-bottom: 2%;
+ }
+}

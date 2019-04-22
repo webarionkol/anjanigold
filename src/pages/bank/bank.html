@@ -1,0 +1,86 @@
+<!--
+  Generated template for the BankPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+           
+        </button>
+        <ion-title >Banks Informaton</ion-title>
+   
+         
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card *ngFor="let item of bank">
+        <img src="{{item.bank_img}}" padding/>
+        <ion-card-content>
+          <ion-card-title text-center>
+            {{item.bank_name}}
+            </ion-card-title>
+           <ion-row>
+             <ion-col col-5>
+               ACCOUNT NAME::
+             </ion-col>
+             <ion-col col-7>
+               {{item.account_name}}
+              </ion-col>
+           </ion-row>
+
+           <ion-row>
+              <ion-col col-5>
+                BANK NAME::
+              </ion-col>
+              <ion-col col-7>
+               {{item.bank_name}}
+               </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-5>
+                  ACCOUNT NO::
+                </ion-col>
+                <ion-col col-7>
+                 {{item.account_no}}
+                 </ion-col>
+              </ion-row>
+
+              <ion-row>
+                  <ion-col col-5>
+                    IFSC CODE::
+                  </ion-col>
+                  <ion-col col-7>
+                   {{item.ifsc_code}}
+                   </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-5>
+                      BRANCH Name::
+                    </ion-col>
+                    <ion-col col-7 >
+                       {{item.branch_name}}
+                     </ion-col>
+                  </ion-row>
+        </ion-card-content>
+      </ion-card>
+     
+
+<!--      
+
+    <ion-fab bottom right>
+        <button ion-fab style="color:#4FCE5D;background-color: white"> <ion-icon name="logo-whatsapp"></ion-icon></button>
+    </ion-fab>
+    
+    <ion-fab bottom left>
+        <button ion-fab style="color:rgb(69, 95, 150);background-color: white"> <ion-icon name="logo-facebook"></ion-icon></button>
+    </ion-fab> -->
+    
+</ion-content>

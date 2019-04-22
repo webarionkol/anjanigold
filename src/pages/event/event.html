@@ -1,0 +1,61 @@
+<!--
+  Generated template for the EventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+           
+        </button>
+        <ion-title >Events</ion-title>
+   
+         
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="check" text-center style="margin-top:20%">
+        <img src="http://anjanigold.dot2door.in/includes/images/logo.png">
+         <h2 style="color:rgb(179, 32, 32)">No Events found</h2>
+   </div>
+    <div  *ngIf="!check">
+        <ion-list>
+            <ion-item *ngFor="let event of events"  (click)="getProducts(event)">
+              <ion-thumbnail item-end>
+                <img [src]="event.event_img">
+              </ion-thumbnail>
+              <h2>{{event.event_name}}</h2>
+              <p [innerHTML]="event.event_desc"></p>
+              <p>{{event.event_time}}</p>
+              <p>{{event.event_place}}</p>
+              <ion-avatar ion-button clear item-start style="color:black">
+                {{event.event_date}} <br>
+               
+              </ion-avatar>
+          
+            </ion-item>
+          </ion-list>
+         <!-- <p>{{dateString |  date:'dd/MM/yyyy'}}</p>  -->
+    </div>
+  
+    
+
+
+    <ion-fab bottom right>
+
+        <a href="https://wa.me/+91{{whatsapp}}/?text=Hi, need help">
+        <button ion-fab style="color:#4FCE5D;background-color: transparent"> <ion-icon name="logo-whatsapp"></ion-icon></button>
+ </a>
+    </ion-fab>
+    
+    <ion-fab bottom left>
+            <a href="{{fb}}">
+        <button ion-fab style="color:rgb(69, 95, 150);background-color: transparent"> <ion-icon name="logo-facebook"></ion-icon></button>
+    </a>
+    </ion-fab>
+    
+</ion-content>

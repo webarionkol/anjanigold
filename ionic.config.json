@@ -1,0 +1,7 @@
+{
+  "name": "AnjaniGold",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

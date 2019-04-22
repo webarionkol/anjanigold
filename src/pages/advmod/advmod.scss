@@ -1,0 +1,141 @@
+page-advmod {
+    .main-view{
+      background: transparent;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: .5;
+        background-color: rgba(17, 17, 17, 0.849);
+          /* Add the blur effect */
+
+      }
+      .modal_content {
+        position: relative;
+        top: calc(25% - (20%/2));
+        right: 5%;
+        left: 5%;
+        width: 90%;
+        height: auto;
+        z-index: 100;
+        color: #333;
+        background: #e8e8e8;
+        background: -moz-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+        background: -webkit-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+        background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
+        border-radius: 5px;
+        box-shadow: 0 2px 3px rgba(51, 51, 51, 0.815);
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        overflow: hidden; 
+
+           h3{
+             position: absolute;
+             top:0;
+             left: 10px;
+             font-size: 20px;
+
+           }
+           p{
+             margin-top:10px;
+             margin-bottom:3px;
+           }
+           #topbtn{
+            position: absolute;
+            top:0;
+            right: 6px; 
+            background-color: transparent;
+            color:rgb(43, 39, 39);
+           }
+           .btt{
+            left: 0;
+            right: 0;
+            background: #dbedfe;
+            position: absolute;
+            bottom: 0;
+           }
+      }
+      .theroot {
+      height: 100px;
+      background-color: yellow;
+    }
+
+    .item-md.item-block .item-inner {
+      padding-right: 8px;
+      padding-left: 8px;
+      height: 20px !important;
+      border: 1px solid #a39e9e;
+      text-align: center;
+      border-radius: 3px;
+
+  }
+
+  .item-ios.item-block .item-inner {
+    padding-right: 8px;
+    padding-left: 8px;
+    height: 20px !important;
+    border: 1px solid #a39e9e;
+    text-align: center;
+    border-radius: 3px;
+
+}
+
+
+.text-input-ios{
+  margin-bottom: 10px;
+  text-align: center;
+}
+.item-ios{
+  margin-bottom: 10px;
+  padding-left: 10px;
+  height: 20px !important;
+  padding-right: 10px;
+  text-align: center;
+}
+.button-ios{
+  -webkit-box-shadow: none;
+}
+  .item-block{
+    min-height: 3.4rem;
+    margin-bottom: 10px;
+  }
+  .text-input-md{
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .item-md{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    height: 20px !important;
+    padding-right: 10px;
+    text-align: center;
+  }
+  .button-md{
+    -webkit-box-shadow: none;
+  }
+
+  .text-input-ios{
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .item-ios{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    height: 20px !important;
+    padding-right: 10px;
+    text-align: center;
+  }
+  .button-ios{
+    -webkit-box-shadow: none;
+  }
+  #btt1{
+    background-image: linear-gradient(90deg, #009688 15%, #8BC34A 100%);
+  }
+  #btt2{ 
+    background-image: linear-gradient(90deg, #607D8B 15%, #9E9E9E 100%);
+  }
+}

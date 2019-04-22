@@ -1,0 +1,329 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>         
+        </button>
+        <ion-title >Home</ion-title>
+      </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="banner">
+            <ion-slides pager loop="true" speed=2000 autoplay="2000" *ngIf="banners && banners.length"> 
+                    <ion-slide *ngFor="let item of banners">
+                        <img src="{{item.banner_img}}">
+                    </ion-slide>
+                   
+              
+            </ion-slides>
+    </div>
+
+    <marquee scrollamount="8"><p class="marquee"><b>{{marqu}}</b></p></marquee>
+    <!-- ?textmarque -->
+<div class="tabledata">
+        <ion-row text-center>
+                <ion-col col-12 id="tabhed" ><b>GOLD KOLKATA DELIVERY</b></ion-col>
+            </ion-row>
+        
+          <ion-row text-center id="rowo">
+              <ion-col col-3>BUY</ion-col>
+              <ion-col col-3>SELL</ion-col>
+              <ion-col col-3>Low</ion-col>
+              <ion-col col-3>High</ion-col>
+           </ion-row>
+           <ion-row text-center id="rowt" *ngIf="metal_cost && metals && old">
+              <ion-col col-3  [ngClass]="{'red-bkg': (0 > sum(metal_cost.gold_cost, old.rows[0].Bid)-(sum(metal_cost.gold_cost, metals.rows[0].Bid))), 'green-bkg': (sum(metal_cost.gold_cost, old.rows[0].Bid)-(sum(metal_cost.gold_cost, metals.rows[0].Bid)) > 0)}"><b>{{ sum(metal_cost.gold_cost, metals.rows[0].Bid) }}</b></ion-col>
+              <ion-col col-3  [ngClass]="{'red-bkg': (0 > sum(metal_cost.gold_cost, old.rows[0].Ask)-(sum(metal_cost.gold_cost, metals.rows[0].Ask))), 'green-bkg': (sum(metal_cost.gold_selling, old.rows[0].Ask)-(sum(metal_cost.gold_selling, metals.rows[0].Ask)) > 0)}">{{ sum(metal_cost.gold_selling, metals.rows[0].Ask) }}</ion-col>
+              <ion-col col-3  [ngClass]="{'red-bkg': (0 > sum(metal_cost.gold_cost, old.rows[0].Low)-(sum(metal_cost.gold_cost, metals.rows[0].Low))), 'green-bkg': (sum(metal_cost.gold_cost, old.rows[0].Low)-(sum(metal_cost.gold_cost, metals.rows[0].Low)) > 0)}">{{ sum(metal_cost.gold_cost, metals.rows[0].Low) }}</ion-col>
+              <ion-col col-3   [ngClass]="{'red-bkg': (0 > sum(metal_cost.gold_cost, old.rows[0].High)-(sum(metal_cost.gold_cost, metals.rows[0].High))), 'green-bkg': (sum(metal_cost.gold_selling, old.rows[0].High)-(sum(metal_cost.gold_selling, metals.rows[0].High)) > 0)}">{{ sum(metal_cost.gold_selling, metals.rows[0].High) }}</ion-col>
+        
+           </ion-row>
+        
+           <ion-row text-center >
+              <ion-col col-12 id="tabhed" ><b>SILVER KOLKATA DELIVERY</b></ion-col>
+          </ion-row>
+        
+        <ion-row text-center id="rowo">
+            <ion-col col-3>BUY</ion-col>
+            <ion-col col-3>SELL</ion-col>
+            <ion-col col-3>Low</ion-col>
+            <ion-col col-3>High</ion-col>
+         </ion-row>
+         <ion-row text-center id="rowt" *ngIf="metal_cost && metals && old">
+            <ion-col col-3  [ngClass]="{'red-bkg': (0 > sum(metal_cost.silver_cost, old.rows[1].Bid)-(sum(metal_cost.silver_cost, metals.rows[1].Bid))), 'green-bkg': (sum(metal_cost.silver_cost, old.rows[1].Bid)-(sum(metal_cost.silver_cost, metals.rows[1].Bid)) > 0)}"><b>{{ sum(metal_cost.silver_cost, metals.rows[1].Bid) }}</b></ion-col>
+              <ion-col col-3  [ngClass]="{'red-bkg': (0 > sum(metal_cost.silver_selling, old.rows[1].Ask)-(sum(metal_cost.silver_selling, metals.rows[1].Ask))), 'green-bkg': (sum(metal_cost.silver_cost, old.rows[1].Ask)-(sum(metal_cost.silver_cost, metals.rows[1].Ask)) > 0)}">{{ sum(metal_cost.silver_selling, metals.rows[1].Ask) }}</ion-col>
+              <ion-col col-3  [ngClass]="{'red-bkg': (0 > sum(metal_cost.silver_cost, old.rows[1].Low)-(sum(metal_cost.silver_cost, metals.rows[1].Low))), 'green-bkg': (sum(metal_cost.silver_cost, old.rows[1].Low)-(sum(metal_cost.silver_cost, metals.rows[1].Low)) > 0)}">{{ sum(metal_cost.silver_cost, metals.rows[1].Low) }}</ion-col>
+              <ion-col col-3   [ngClass]="{'red-bkg': (0 > sum(metal_cost.silver_selling, old.rows[1].High)-(sum(metal_cost.silver_selling, metals.rows[1].High))), 'green-bkg': (sum(metal_cost.silver_cost, old.rows[1].High)-(sum(metal_cost.silver_cost, metals.rows[1].High)) > 0)}">{{ sum(metal_cost.silver_selling, metals.rows[1].High) }}</ion-col>
+         </ion-row>
+        
+        
+
+    <ion-row   *ngIf="metals && old" id="tablep">
+        <ion-col ion-item no-lines no-padding text-center class="head">
+          <span> GOLD MCX</span>
+        </ion-col>
+        <ion-col>
+                <ion-row>
+                    <ion-col>
+                        BID
+                    </ion-col>
+                    <ion-col [ngClass]="{'red-bkg': (0 > old.rows[0].Bid - metals.rows[0].Bid), 'green-bkg': (old.rows[0].Bid - metals.rows[0].Bid > 0)}">
+                            <b>{{metals.rows[0].Bid}}</b>
+                   </ion-col>
+                 
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                      ASK
+                  </ion-col>
+                  <ion-col [ngClass]="{'red-bkg': (0 > old.rows[0].Bid - metals.rows[0].Ask), 'green-bkg': (old.rows[0].Ask - metals.rows[0].Ask > 0)}">
+                        <b>{{metals.rows[0].Ask}}</b>
+                </ion-col>
+               
+              </ion-row>
+        </ion-col>
+  
+  
+         <ion-col>
+                <ion-row>
+                    <ion-col>
+                        Low
+                    </ion-col>
+                    <ion-col [ngClass]="{'red-bkg': (0 > old.rows[0].Bid - metals.rows[0].Low), 'green-bkg': (old.rows[0].Low - metals.rows[0].Low > 0)}">
+                            <b>{{metals.rows[0].Low}}</b>
+                  </ion-col>
+                 
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                      High
+                  </ion-col>
+                  <ion-col [ngClass]="{'red-bkg': (0 > old.rows[0].High - metals.rows[0].High), 'green-bkg': (old.rows[0].High - metals.rows[0].High > 0)}">
+                        <b>{{metals.rows[0].High}}</b>
+                </ion-col>
+               
+              </ion-row>
+        </ion-col>
+    </ion-row>
+
+
+   
+        
+
+
+        <ion-row   *ngIf="metals && old" id="tablep">
+                <ion-col ion-item no-lines no-padding text-center class="head">
+                      <span>SILVER MCX</span> 
+                </ion-col>
+                <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                BID
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[1].Bid - metals.rows[1].Bid), 'green-bkg': (old.rows[1].Bid - metals.rows[1].Bid > 0)}">
+                                    {{metals.rows[1].Bid}}
+                           </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              ASK
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[1].Bid - metals.rows[1].Ask), 'green-bkg': (old.rows[1].Ask - metals.rows[1].Ask > 0)}">
+                                <b>{{metals.rows[1].Ask}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+          
+          
+                 <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                Low
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[1].Bid - metals.rows[1].Low), 'green-bkg': (old.rows[1].Low - metals.rows[1].Low > 0)}">
+                                    <b>{{metals.rows[1].Low}}</b>
+                          </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              High
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[0].High - metals.rows[0].High), 'green-bkg': (old.rows[0].High - metals.rows[0].High > 0)}">
+                                <b>{{metals.rows[1].High}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+            </ion-row>
+
+
+
+              
+
+
+        <ion-row   *ngIf="metals && old" id="tablep">
+                <ion-col ion-item no-lines no-padding text-center class="head">
+                       <span>GOLD COMEX</span>
+                </ion-col>
+                <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                BID
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[2].Bid - metals.rows[2].Bid), 'green-bkg': (old.rows[2].Bid - metals.rows[2].Bid > 0)}">
+                                    {{metals.rows[2].Bid}}
+                           </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              ASK
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[2].Bid - metals.rows[1].Ask), 'green-bkg': (old.rows[2].Ask - metals.rows[2].Ask > 0)}">
+                                <b>{{metals.rows[2].Ask}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+          
+          
+                 <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                Low
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[2].Bid - metals.rows[2].Low), 'green-bkg': (old.rows[2].Low - metals.rows[2].Low > 0)}">
+                                    <b>{{metals.rows[2].Low}}</b>
+                          </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              High
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[2].High - metals.rows[2].High), 'green-bkg': (old.rows[2].High - metals.rows[2].High > 0)}">
+                                <b>{{metals.rows[2].High}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+            </ion-row>
+
+
+
+        <ion-row   *ngIf="metals && old" id="tablep">
+                <ion-col ion-item no-lines no-padding text-center class="head">
+                       <span> SILVER COMEX</span>
+                </ion-col>
+                <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                BID
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[3].Bid - metals.rows[3].Bid), 'green-bkg': (old.rows[3].Bid - metals.rows[3].Bid > 0)}">
+                                    {{metals.rows[3].Bid}}
+                           </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              ASK
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[3].Bid - metals.rows[3].Ask), 'green-bkg': (old.rows[3].Ask - metals.rows[3].Ask > 0)}">
+                                <b>{{metals.rows[3].Ask}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+          
+          
+                 <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                Low
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[3].Bid - metals.rows[3].Low), 'green-bkg': (old.rows[3].Low - metals.rows[3].Low > 0)}">
+                                    <b>{{metals.rows[3].Low}}</b>
+                          </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              High
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[3].High - metals.rows[3].High), 'green-bkg': (old.rows[3].High - metals.rows[3].High > 0)}">
+                                <b>{{metals.rows[3].High}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+            </ion-row>
+
+
+        <ion-row   *ngIf="metals && old" id="tablep">
+                <ion-col ion-item no-lines no-padding text-center class="head">
+                       <span>INR SPOT</span>
+                </ion-col>
+                <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                BID
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[4].Bid - metals.rows[4].Bid), 'green-bkg': (old.rows[4].Bid - metals.rows[4].Bid > 0)}">
+                                    {{metals.rows[4].Bid}}
+                           </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              ASK
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[4].Bid - metals.rows[4].Ask), 'green-bkg': (old.rows[4].Ask - metals.rows[4].Ask > 0)}">
+                                <b>{{metals.rows[4].Ask}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+          
+          
+                 <ion-col>
+                        <ion-row>
+                            <ion-col>
+                                Low
+                            </ion-col>
+                            <ion-col [ngClass]="{'red-bkg': (0 > old.rows[4].Bid - metals.rows[4].Low), 'green-bkg': (old.rows[4].Low - metals.rows[4].Low > 0)}">
+                                    <b>{{metals.rows[4].Low}}</b>
+                          </ion-col>
+                         
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                              High
+                          </ion-col>
+                          <ion-col [ngClass]="{'red-bkg': (0 > old.rows[4].High - metals.rows[4].High), 'green-bkg': (old.rows[4].High - metals.rows[4].High > 0)}">
+                                <b>{{metals.rows[4].High}}</b>
+                        </ion-col>
+                       
+                      </ion-row>
+                </ion-col>
+            </ion-row>
+           
+
+   </div>
+  
+
+<ion-fab bottom right>
+
+        <a href="https://wa.me/+91{{whatsapp}}/?text=Hi, need help">
+        <button ion-fab style="color:#4FCE5D;background-color: transparent"> <ion-icon name="logo-whatsapp"></ion-icon></button>
+ </a>
+    </ion-fab>
+    
+    <ion-fab bottom left>
+            <a href="{{fb}}">
+        <button ion-fab style="color:rgb(69, 95, 150);background-color: transparent"> <ion-icon name="logo-facebook"></ion-icon></button>
+    </a>
+    </ion-fab> 
+</ion-content>
